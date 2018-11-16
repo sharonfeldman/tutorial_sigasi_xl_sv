@@ -1,0 +1,32 @@
+/*
+ * This is a GraphicsConfiguration file for StateMachines.
+ * It allows you to customise your statemachine, the way you want it.
+ * All the features you've come to love in Sigasi are available:
+ * - Auto-complete (Ctrl+Space)
+ * - Navigation (Ctrl+click or F3)
+ * - Quick outline (Ctrl+O)
+ * - Formatting (Ctrl+F)
+ * - Show in (Shift+Alt+W)
+ * - Hovering (Hovering over a regex shows what it matches)
+ */
+statemachine work.dut : ^state {
+	// You can also use regex' to match states
+	def state group notRunning (idle, regex"ready")
+	def state group notPreparing (notRunning, running)
+
+	state preparing { color green }
+
+	state notPreparing {
+		color gray
+		state running { color yellow }
+		state notRunning {
+			color red
+		// TODO "Hide state"
+		// Uncomment the line below (Ctrl+/) to hide the idle state
+//			state idle { hide }
+		// TODO "Collapse state"
+		// Uncomment the line below (Ctrl+/) to collapse the notRunning state
+//			collapse
+		}
+	}
+}

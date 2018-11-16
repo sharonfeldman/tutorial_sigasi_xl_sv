@@ -1,0 +1,42 @@
+/* TODO "Configure your BlockDiagram"
+ * Uncomment this code block by block (and save every time) to explore
+ * how you can customize your BlockDiagram.
+ * 
+ * You can create one of these files by clicking the Sigasi button on 
+ * the top right of the BlockDiagram view.
+ * It's also possible to pin this view (so that it doesn't change while you edit
+ * your code) by clicking the pin button on the top left of the BlockDiagram view.
+ * 
+ * Of course, the following features are available as well:
+ * - Navigation (Ctrl+click)
+ * - Quick outline (Ctrl+O)
+ * - Formatting (Ctrl+F)
+ * - Show in (Shift+Alt+W)
+ * - Hovering
+ * - Double clicking a wire/port or block to navigate to the code
+ */
+diagram work.foobar {
+	//show : instantiations
+
+	def block group middle (regex"block[23]")
+
+	def wire group middleToEnd (sc)
+
+	//port a { hide }
+
+	block block1 {
+		color green 
+		//port a { hide }
+	}
+	
+	block middle {
+		block block2, block3 {
+			color aqua
+		}
+		collapse
+	}
+	
+	block block4 {
+		color red
+	}
+}
