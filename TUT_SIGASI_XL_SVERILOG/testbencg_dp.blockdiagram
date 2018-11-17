@@ -1,10 +1,19 @@
 diagram work.testbench {
 	
+	def wire group tOutput (regex"valid", regex"data_out") 
+	def wire group tInput (regex"start", regex"data_in") 
+	wire tOutput { color red }
+	wire tInput { color purple }
 	// Hide clocks and resets
 	wire clk, rst {
 		hide
 	}
 	
+	//wire tInput { color purpule }
+	// Hide clocks and resets
+	wire clk, rst {
+		hide
+	}
 	block dut_instance {
 		color green 
 			// Hide empty ports
@@ -61,6 +70,9 @@ diagram work.testbench {
 			hide
 		}
 	}
+	
+	
+
 	
 	wire data_in,start { color purple }
 	wire data_out,valid { color red }
