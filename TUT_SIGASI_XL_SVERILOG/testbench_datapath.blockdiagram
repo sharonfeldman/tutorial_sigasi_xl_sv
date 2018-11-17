@@ -1,0 +1,76 @@
+diagram work.testbench {
+	
+
+	// Hide clocks and resets
+	wire clk, rst {
+		hide
+	}
+	
+	//wire tInput { color purpule }
+	// Hide clocks and resets
+	wire clk, rst {
+		hide
+	}
+	block dut_instance {
+		color green 
+			// Hide empty ports
+			port regex"clk" {
+				hide
+			}
+			
+			port regex"rst" {
+				hide
+			}
+
+			// Color the important output port
+			port regex"data_out" { 
+				color red
+			}
+			
+			port regex"valid" { 
+				color orange
+			}
+		}
+	
+	block clk_gen_instance {
+		hide
+		color yellow 
+		//port a { hide }
+	}
+	
+	block stimgen_instance {
+		color aqua 
+		
+		port regex"clk" {
+			hide
+		}
+		
+		port regex"rst" {
+			hide
+		}
+	}
+	
+	block  checker_instance {
+		color gray
+		// Color the important output port
+		port regex"data_out" { 
+			color red
+		}
+		port regex"valid" { 
+			color orange
+		}
+		port regex"clk" {
+			hide
+		}
+		
+		port regex"rst" {
+			hide
+		}
+	}
+	
+	
+
+	
+	wire data_in,start { color purple }
+	wire data_out,valid { color red }
+}
